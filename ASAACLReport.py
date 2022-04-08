@@ -117,29 +117,11 @@ def split_acl(sample_acl):
 
 def main():
 
-    # sample_acl = [
-    # '  access-list Profile_access_in line 96 extended permit tcp host 192.168.2.30 host 192.168.60.28 eq 1526 time-range Profilehardwaretest (hitcnt=0) (inactive) 0xb8777bf8',
-    # '  access-list CorpSys_access_in line 6 extended permit tcp any host 192.168.60.31 range 49152 65535 (hitcnt=2293) 0x5449d5e0',
-    # '  access-list CCSystems_access_in line 6 extended permit tcp host 192.168.4.31 host 192.168.47.59 eq 2000 (hitcnt=0) 0x85859ffd ',
-    # '  access-list FWGW1_access_in line 5 extended permit tcp 172.19.6.0 255.255.255.0 host 192.168.3.244 eq 1812 (hitcnt=0) 0xcb7e1707 ',
-    # '  access-list FCIS_PROD_access_in line 2 extended permit tcp 172.27.1.0 255.255.255.0 host 192.168.13.46 range 49152 65535 (hitcnt=0) 0x6f181dcb ',
-    # '  access-list VXRAIL_Sys_access_in line 2 extended permit udp 10.104.0.0 255.255.0.0 host 192.168.3.210 eq 135 (hitcnt=0) 0x8ab91f77 ',
-    # '  access-list Workstation_access_in line 7 extended permit icmp host 192.168.7.100 host 192.168.3.15 (hitcnt=0) 0x4381ad08 ',
-    # '  access-list DbaseSys_access_in line 2 extended deny ip host 192.168.8.0 host 192.168.4.41 inactive (hitcnt=0) (inactive) 0xd447bb33 ',
-    # '  access-list WAN_access_in line 548 extended permit tcp host 192.168.46.201 host 192.168.60.104 eq 8086 (hitcnt=0, 279, 0) 0x261092fc ',
-    # '  access-list SysMgmt_access_in line 6 extended permit udp host 192.168.61.7 host 192.168.3.244 eq domain (hitcnt=1049, 639, 410) 0xb4684901 ',
-    # '  access-list TestSys_access_in line 80 extended permit ip any host 192.168.51.41 (hitcnt=0, 0, 905) 0xbba64b24 '
-    # ]
-
     file = "test-files/access-list-cluster.txt"
-
-    # file = "test-files/access-list-cluster.txt"
 
     sample_acl=get_file(file)
 
     df = split_acl(sample_acl)
-
-    # df.to_csv("test-files/access-list-file-test.csv", index=False)
 
     rules_no_hit = []
     # unique ACL Names
